@@ -1,0 +1,1 @@
+This is my first django project.My job is not to do this, the program has been my interest, it has been groping and has not stopped. If you're interested in exploring together, please contact me. E-mail: mtolee@hotmail.com
