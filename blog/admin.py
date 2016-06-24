@@ -1,3 +1,8 @@
 from django.contrib import admin
+from blog.models import Article
 
-# Register your models here.
+
+class ArticleAdmin(admin.ModelAdmin):
+	list_display = ('title', 'desc', 'date_publish',)
+
+admin.site.register(Article,ArticleAdmin)
