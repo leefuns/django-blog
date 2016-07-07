@@ -17,6 +17,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font: inherit;
 	vertical-align: baseline;
 }
+#contactform #id_subject, #contactform #id_email, #contactform #id_message {
+	margin-top: 20px;
+}
+
+#contactform label{
+	font-size: 12px;
+	float: left;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -35,6 +43,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 	content: none;
 }
 table {
+	color: white;  /* form color */
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -74,7 +83,6 @@ p {
 	line-height: 1.6em;
 	color: white;   /* #848484 */
 	font-size: 8pt;
-	color: white;
 }
 h1 {
 	font-family: 'Droid Serif', Verdana, Arial, sans-serif;
@@ -854,6 +862,9 @@ Blog CSS
 	background-position: 0 -17px;
 	color: #444444;
 }
+
+/* This is start of pagination css*/
+
 #pagination {
 	display: inline-block;
 	height: 8px;
@@ -861,14 +872,20 @@ Blog CSS
 	width: 720px;
 	font-size: 10pt;
 }
-#pagination a {
-	color: #707070;
-	text-decoration: none;
+
+#pagination-flickr {
+	height: 30px;
+	margin-left: 500px;
 }
-#pagination .active {
-	color: #444444;
-	text-decoration: underline;
+
+#pagination li{
+	color: white;
+	float: left;
+	margin-left: 5px;
 }
+
+/* This is end of pagination css*/
+
 .blog-item-single-info {
 	padding: 5px 0 20px 0;
 	height: 15px;
@@ -1019,10 +1036,10 @@ Contact CSS
 	width: 400px;
 	padding: 5px;
 }
-#contactform #sender_name {
+#contactform #sender_name, #contactform #id_subject {
 	width: 320px;
 }
-#contactform #sender_email {
+#contactform #sender_email, #contactform #id_email {
 	width: 320px;
 }
 #contactform #sender_url {

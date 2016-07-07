@@ -4,11 +4,15 @@
 leeweb
 {% endblock %}
 {% block content %}
+
+
 <div id="content">
 	<!--This is the START of the NIVO slider-->
 	<div class="slider-wrapper theme-effe">
-		<div id="slider" class="nivoSlider"> <img src="{% static 'images/slider/slide1.jpg' %}" alt="" title="#img1" /> <img src="{% static 'images/slider/slide2.jpg' %}" alt="" title="#img2" /> <img src="{% static 'images/slider/slide3.jpg' %}" alt="" title="#img3" /> <img src="{% static 'images/slider/slide4.jpg' %}" alt="" title="#img4" /> </div>
+		<div id="slider" class="nivoSlider">{% for banner in banner_list %}<a href="{{ banner.url }}"><img src="/uploads/{{ banner.img  }}" /></a>{% endfor %}</div>
 	</div>
+
+
 	<!--END of NIVO Slider-->
 	<!--This is the START of the recent posts-->
 	<div class="spacer"></div>
@@ -24,13 +28,13 @@ leeweb
 			<p>Here you can find some of our most recent and fresh content...</p>
 		</div>
 		<div class="recent-summary">
-			<div class="recent-item"> <a class="single_image" href="{% static 'images/blog/large/recent1.jpg' %}"><img src="{% static 'images/blog/thumbs/recent1.jpg' %}" width="250" height="150" alt="recent1" /></a>
-				<h6>NYC</h6>
-				<p>On a scooter?<a class="readmore" href="blog.html">read more →</a></p>
+			<div class="recent-item"> <a class="single_image" href="/uploads/{{ posts_1.psot_img }}"><img src="/uploads/{{ posts_1.psot_img }}" width="250" height="150" alt="recent1" /></a>
+				<h6>{{ posts_1.title }}</h6>
+				<p>{{ posts_1.desc }}<a class="readmore" href="/blog/post/{{ posts_1.id }}">read more →</a></p>
 			</div>
-			<div class="recent-item-last"> <a class="single_image" href="{% static 'images/blog/large/recent2.jpg' %}"><img src="{% static 'images/blog/thumbs/recent2.jpg' %}" width="250" height="150" alt="recent2" /></a>
-				<h6>Feathers</h6>
-				<p>Could drop some lorem here.<a class="readmore" href="blog.html">read more →</a></p>
+			<div class="recent-item-last"> <a class="single_image" href="/uploads/{{ posts_2.psot_img }}"><img src="/uploads/{{ posts_2.psot_img }}" width="250" height="150" alt="recent2" /></a>
+				<h6>{{ posts_2.title }}</h6>
+				<p>{{ posts_2.desc }}<a class="readmore" href="/blog/post/{{ posts_2.id }}">read more →</a></p>
 			</div>
 		</div>
 		<!--END of recent posts-->

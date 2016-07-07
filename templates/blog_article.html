@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+Lee's blog
+{% endblock %}
+{% block content %}
+{% autoescape off %}
+
+<div id="content">
+  <!--This is the START of the blog section-->
+  <div id="blog">
+    <div class="blog-item-single">
+      <h3>{{ title }}</h3>
+      <div class="blog-item-single-info">
+        <div class="user">admin</div>
+        <div class="comments">6 comments</div>
+        <div class="tags">psd news blog post</div>
+      </div>
+      <div class="blog-item-single-content"> <a class="single_image" href="/uploads/{{ img }}"><img src="/uploads/{{ img }}" width="720" height="280" alt="blog1" /></a>
+        <p>{{ content }}</p>
+      </div>
+     </div>
+    </div>
+ </div>
+
+{% endautoescape %}
+{% endblock %}

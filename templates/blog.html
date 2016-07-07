@@ -10,17 +10,17 @@ Lee's blog
 <div id="content">
   <!--This is the START of the blog section-->
   <div id="blog">
-    <div class="blog-item"> <a href="blog-single.html"><img class="single_image" src="{% static 'images/blog/thumbs/blog1.jpg' %}" width="280" height="180" alt="blog1" /></a>
+    <div class="blog-item"> <a href="post/{{ post.id }}"><img class="single_image" src="/uploads/{{ post.psot_img }}" width="280" height="180" alt="blog1" /></a>
       <div class="blog-item-info">
         <div class="user">admin</div>
         <div class="comments">6 comments</div>
         <div class="tags">psd news blog post</div>
       </div>
-      <div class="blog-item-content"> <a href="blog-single.html">
+      <div class="blog-item-content"> <a href="post/{{ post.id }}">
         <h5>{{ post.title }}</h5>
         </a>
         <p>{{ post.desc }}</p>
-        <a class="readmore" href="blog-single.html">read more →</a> <br />
+        <a class="readmore" href="post/{{ post.id }}">read more →</a> <br />
       </div>
        <div class="spacer"></div>
     </div>
@@ -28,4 +28,19 @@ Lee's blog
   <!--This is the END of the blog section-->
 </div>
 {% endfor %}
+<div id="pagination">
+    <ul id="pagination-flickr">
+    {% if posts.has_previous %}
+    <li class="previous"><a href="?page={{ posts.previous_page_number }}">&laquo;上一页</a></li>
+    {% else %}
+    <li class="previous-off">&laquo;上一页</li>
+    {% endif %}
+     <li class="active">{{ posts.number }}/{{ posts.paginator.num_pages }}</li>
+    {% if posts.has_next %}
+    <li class="next"><a href="?page={{ posts.next_page_number }}">下一页 &raquo;</a></li>
+    {% else %}
+      <li class="next-off">下一页 &raquo;</li>
+    {% endif %}
+   </ul>
+</div>
 {% endblock %}
